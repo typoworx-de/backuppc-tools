@@ -1,0 +1,10 @@
+# Allow backuppc to run tar without a password
+Defaults visiblepw
+
+backuppc ALL=NOPASSWD:/bin/tar
+backuppc ALL=NOPASSWD:/usr/bin/rsync
+backuppc ALL=NOPASSWD:/usr/bin/nice
+backuppc ALL=NOPASSWD:/usr/bin/ionice
+backuppc ALL=NOPASSWD:/usr/bin/touch
+backuppc ALL=NOPASSWD:/bin/dir
+

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# read global config
+export BACKUPPC_HOME=$(awk -F":" '/backuppc/{print $(NF-1)}' /etc/passwd)
+export BACKUPPC_PRE_DUMP=/var/backup.d
+
+if [ ! -d "${BACKUPPC_PRE_DUMP}" ]; then
+    mkdir -p "$BACKUPPC_PRE_DUMP";
+    chown backuppc:root "${BACKUPPC_PRE_DUMP}";
+fi
+if [ ! -d "${BACKUPPC_HOME}log/" ]; then
+    mkdir -p "${BACKUPPC_HOME}/log";
+    chown backuppc:root "${BACKUPPC_HOME}/log";
+fi
+
+if [ "$BACKUPPC_PRE_DUMP" != "" ] && [ "$BACKUPPC_PRE_DUMP" != "/" ] && [ -r "$BACKUPPC_PRE_DUMP" ];
+then
+    echo "Purging directory... '$BACKUPPC_PRE_DUMP'";
+    if [ $( ls -1A $BACKUPPC_PRE_DUMP/mysql-dumps/ | wc -l ) -gt 0 ];
+    then
+	rm --preserve-root -R $BACKUPPC_PRE_DUMP/mysql-dumps/*
+    fi
+
+    if [ $( ls -1A $BACKUPPC_PRE_DUMP/* | wc -l ) -gt 0 ];
+    then
+        rm --preserve-root -R $BACKUPPC_PRE_DUMP/*.list;
+    fi
+else
+    echo "ERROR: Please check BACKUPPC_PRE_DUMP value in Config!"
+    exit
+fi
+
+
+if [ $(id -u -n) == "root" ];
+then
+    su backuppc -c $0;
+else
+    ${BACKUPPC_HOME}/bin/dump-sys-pkgs.sh
+    ${BACKUPPC_HOME}/bin/dump-mysql.sh
+fi
+
