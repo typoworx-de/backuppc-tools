@@ -4,7 +4,7 @@ HOW TO USE THIS SCRIPT
 
 1)	Install requirements:
 	apt-get install sudo rsync
-
+	
 	I assume mysql-server and mysql-client are already installed!
 
 2)	Extract/move this to:
@@ -15,9 +15,8 @@ HOW TO USE THIS SCRIPT
 
 	$> useradd -r -M -d /usr/local/backuppc backuppc
 
-
 	I recommend using the user "backuppc" on both - server and client
-	machine. Make shure you apply the public-key for passwordless
+	machine. Make sure you apply the public-key for passwordless
 	authentication on the user's home "backuppc" and not on root!
 
 	TRY THIS:
@@ -29,9 +28,7 @@ HOW TO USE THIS SCRIPT
 	follow this link if you need help:
 	https://www.debian-administration.org/article/530/SSH_with_authentication_key_instead_of_password
 
-
 4)	$> chown backuppc:root /usr/local/backuppc/
-
 
 5)	$> mv ./suders.sudo /etc/sudoers.d/
 	$> chown root:root /etc/suders.d/backupc.sudo
@@ -54,7 +51,6 @@ HOW TO USE THIS SCRIPT
 
 6.2)	Enter mysql credentials in /usr/local/backuppc/.my.cnf
 
-
 7)	Don't forget to test passwordless login!
 
 7.1)	if you use "backuppc" on the backup-machine, too:
@@ -66,15 +62,13 @@ HOW TO USE THIS SCRIPT
 
 	$> ssh backuppc@[client-machine-host-or-ip]
 
-
 8)	manually execute the backup-script:
 
 	$> /usr/local/backuppc/bin/pre_backup
 
 
-
 9)	If everything run's fine, setup your automatic environment.
-	BackupPC is recommended. For every other software make shure
+	BackupPC is recommended. For every other software make sure
 	your backup-server executes this script every time before
 	starting to backup!
 
