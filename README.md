@@ -81,12 +81,18 @@ HOW TO USE THIS SCRIPT
 	-----------------------------------------------------------------
 	Donate using...
 
-	=========================		=========================
-	Bitcoin (prefered!)			Paypal
-	=========================		=========================
+	=========================
+	Bitcoin (prefered!)
+	=========================
 
 
-	BTC-Address				E-Mail Address
-	19rpBxcaq51Q8DrT64Pp8knBWtZUzfXD15	donate@1stblog.de
+	BTC-Address:	19rpBxcaq51Q8DrT64Pp8knBWtZUzfXD15	
+	
+	
+	=========================
+	Paypal
+	=========================
+	
+	E-Mail Address:	donate@1stblog.de
 
 	-----------------------------------------------------------------
