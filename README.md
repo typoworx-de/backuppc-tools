@@ -79,20 +79,9 @@ HOW TO USE THIS SCRIPT
 
 
 	-----------------------------------------------------------------
-	Donate using...
+	Donate:
 
-	=========================
-	Bitcoin (prefered!)
-	=========================
-
-
-	BTC-Address:	19rpBxcaq51Q8DrT64Pp8knBWtZUzfXD15	
-	
-	
-	=========================
-	Paypal
-	=========================
-	
-	E-Mail Address:	donate@1stblog.de
+	BTC-Address:	19rpBxcaq51Q8DrT64Pp8knBWtZUzfXD15
+	ETH-Address:    0xd28706a3e00a799B8d3809D16cDbb178cE9386a3
 
 	-----------------------------------------------------------------
